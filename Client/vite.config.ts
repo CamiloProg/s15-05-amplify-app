@@ -18,6 +18,7 @@ srcRootContent.forEach((directory) => {
 
 export default defineConfig({
   plugins: [react()],
+  
   css: {
     postcss: {
       plugins: [tailwindcss()],
