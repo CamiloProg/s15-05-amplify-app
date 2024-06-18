@@ -8,7 +8,7 @@ import UploadMusicModal from "components/common/UploadMusicModal";
 const NavBar: React.FC = () => {
   const [menuAbierto, setMenuAbierto] = useState<boolean>(false);
   const [formData, setFormData] = useState({
-    nombre: "User1", // Default name for demonstration
+    nombre: "", // Default name for demonstration
     apellido: "",
     numeroIdentidad: "",
     correo: "",
