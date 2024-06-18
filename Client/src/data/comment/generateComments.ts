@@ -44,20 +44,27 @@ const commentsArray = [
   "Increíble trabajo, ¡espero más música de este artista pronto!",
 ];
 
-const imageUrls = (gender: "men" | "women", index: number) =>
+const imageUrls = (gender: "men" | "women", index: number): string =>
   `https://randomuser.me/api/portraits/${gender}/${index}.jpg`;
 
-const getRandomElement = (arr: string[]) => arr[Math.floor(Math.random() * arr.length)];
+const getRandomElement = (arr: string[]): string => arr[Math.floor(Math.random() * arr.length)];
 
 const generateRandomComments = (count: number): Comment[] => {
   const comments: Comment[] = [];
   const usedComments: string[] = [];
   const usedUserNames: string[] = [];
+  const usedImageIndices: Set<string> = new Set(); // Set para rastrear las combinaciones de género e índice de imagen usados
 
   for (let i = 0; i < count; i++) {
     const isMale = Math.random() > 0.5;
     const gender = isMale ? "men" : "women";
-    const index = Math.floor(Math.random() * 10);
+
+    // Obtener un índice de imagen que aún no ha sido utilizado para este género
+    let index = Math.floor(Math.random() * 10);
+    while (usedImageIndices.has(`${gender}-${index}`)) {
+      index = Math.floor(Math.random() * 10);
+    }
+    usedImageIndices.add(`${gender}-${index}`); // Agregar la combinación de género e índice utilizado al set
 
     // Obtener un nombre de usuario aleatorio que aún no ha sido utilizado
     let randomName = getRandomElement(isMale ? maleNames : femaleNames);
