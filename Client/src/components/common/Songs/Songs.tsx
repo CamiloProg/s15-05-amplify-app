@@ -1,0 +1,73 @@
+import React, { useEffect, useState } from "react";
+import { Buffer } from "buffer";
+
+import CardSongs from "../CardSongs";
+import { ImageData } from "../CardSongs/CardSongs.types";
+
+const Songs: React.FC = () => {
+  const [imageData, setImageData] = useState<ImageData[]>([]);
+
+  useEffect(() => {
+    const fetchImages = async () => {
+      try {
+        // Fetch the initial list of images
+        const results = await fetch(`/api/v1_1/drwwbw0ih/resources/image/tags/single`, {
+          headers: {
+            Authorization: `Basic ${Buffer.from(import.meta.env.VITE_CLOUDINARY_API_KEY + ":" + import.meta.env.VITE_CLOUDINARY_API_SECRET).toString("base64")}`,
+          },
+        }).then((r) => r.json());
+
+        const imageDetailsPromises = results.resources.map(
+          async (resource: { asset_id: string; url: string }) => {
+            // Fetch detailed information for each image using the asset_id
+            const detailResponse = await fetch(
+              `/api/v1_1/drwwbw0ih/resources/${resource.asset_id}`,
+              {
+                headers: {
+                  Authorization: `Basic ${Buffer.from(import.meta.env.VITE_CLOUDINARY_API_KEY + ":" + import.meta.env.VITE_CLOUDINARY_API_SECRET).toString("base64")}`,
+                },
+              },
+            ).then((r) => r.json());
+
+            // Filter tags that start with 'g-' and remove the prefix
+            const filteredTags = detailResponse.tags
+              .filter((tag: string) => tag.startsWith("g-"))
+              .map((tag: string) => tag.slice(2));
+
+            return {
+              url: resource.url,
+              public_id: detailResponse.public_id,
+              tags: filteredTags,
+            };
+          },
+        );
+
+        const detailedImageData = await Promise.all(imageDetailsPromises);
+        setImageData(detailedImageData);
+        console.log("Detailed Image Data:", detailedImageData);
+      } catch (error) {
+        console.error("Error fetching endpoint:", error);
+      }
+    };
+
+    fetchImages();
+  }, []);
+
+  return (
+    <div>
+      <h2 className="text-3xl font-medium text-[#666666] ml-6">Canciones</h2>
+      <div>
+        {imageData.map((data) => (
+          <CardSongs
+            key={data.public_id}
+            tags={data.tags}
+            public_id={data.public_id}
+            url={data.url}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Songs;

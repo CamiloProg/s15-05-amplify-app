@@ -3,6 +3,7 @@ import Sidebar from "../Layout/Sidebar";
 import TrendingGenres from "../common/TrendingGenres";
 import Trends from "../Trends";
 import Carousel from "../common/Carrousel";
+import Songs from "components/common/Songs";
 
 function Feed(): JSX.Element {
   return (
@@ -21,6 +22,7 @@ function Feed(): JSX.Element {
       </div>
       {/** Top Géneros*/}
       <TrendingGenres />
+      <Songs />
     </div>
   );
 }
