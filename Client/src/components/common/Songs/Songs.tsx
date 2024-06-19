@@ -20,6 +20,8 @@ const Songs: React.FC = () => {
           },
         }).then((r) => r.json());
 
+        console.log(results);
+
         const imageDetailsPromises = results.resources.map(
           async (resource: { asset_id: string; url: string }) => {
             // Fetch detailed information for each image using the asset_id
@@ -57,9 +59,11 @@ const Songs: React.FC = () => {
   }, []);
 
   return (
-    <div>
-      <h2 className="text-3xl font-medium text-[#666666] ml-6">Canciones</h2>
-      <div>
+    <div className="w-full mb-4">
+      <h2 className="text-3xl font-medium text-[#666666] ml-6 capitalize mb-4">
+        Recientemente Añadido
+      </h2>
+      <div className="w-full flex items-center justify-start gap-4 flex-wrap">
         {imageData.map((data) => (
           <CardSongs
             key={data.public_id}

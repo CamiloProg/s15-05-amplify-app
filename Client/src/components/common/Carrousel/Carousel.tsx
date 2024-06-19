@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import LoginDialog from "../Auth/ingress/Ingress";
 import Register from "../Auth/register";
 import tracksData from "../../../data/banner.json"; // Importa el JSON
+import UploadMusicModal from "../UploadMusicModal";
+import { Link } from "react-router-dom";
 
 const Carousel: React.FC = () => {
   const [isRegisterOpen, setRegisterOpen] = useState(false);
@@ -55,24 +57,28 @@ const Carousel: React.FC = () => {
         <h3 className="font-normal text-white md:text-7xl text-4xl z-10">Amplify yourself</h3>
         <div className="flex justify-center gap-2 items-center mt-5 z-10">
           {/* Botón Inicio sesión */}
-          <button className="text-white border rounded py-2 px-5" onClick={openLogin}>
+          {/*<button className="text-white border rounded py-2 px-5" onClick={openLogin}>
             Descubir
           </button>
-          <LoginDialog
+           <LoginDialog
             openLogin={isLoginOpen}
             onClose={() => setLoginOpen(false)}
             handleRegister={openRegister}
-          />
+          /> */}
+          <Link to="/browse" className="text-white border rounded py-2 px-5">
+            Descubir
+          </Link>
 
           {/* Botón Registrarse */}
-          <button className="text-black bg-white rounded py-2 px-5" onClick={openRegister}>
+          {/* <button className="text-black bg-white rounded py-2 px-5" onClick={openRegister}>
             Subir Música
           </button>
           <Register
             openLogin={isRegisterOpen}
             onClose={() => setRegisterOpen(false)}
             handleLogin={openLogin}
-          />
+          /> */}
+          <UploadMusicModal />
         </div>
       </div>
     </div>

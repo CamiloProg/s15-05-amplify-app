@@ -1,4 +1,5 @@
 import toast from "react-hot-toast";
+import { Buffer } from "buffer";
 
 const handleGetCloudinary = async (resourceType: string): Promise<any> => {
   try {
@@ -10,25 +11,48 @@ const handleGetCloudinary = async (resourceType: string): Promise<any> => {
     }
 
     const credentials = `${cloudinaryApiKey}:${cloudinaryApiSecret}`;
-    const encodedCredentials = atob(credentials); // Encode credentials using btoa
+    const encodedCredentials = Buffer.from(credentials).toString("base64");
 
-    const response = await fetch(`/v1_1/drwwbw0ih/resources/image`, {
-      headers: {
-        Authorization: `Basic ${encodedCredentials}`,
-      },
-    }).then((r) => r.json());
-    console.log(response);
+    const fetchImages = async () => {
+      try {
+        const response = await fetch("/api/v1_1/drwwbw0ih/resources/image/tags/single", {
+          headers: {
+            Authorization: `Basic ${encodedCredentials}`,
+          },
+        });
 
-    if (!response.ok) {
-      throw new Error(
-        `Failed to fetch data from Cloudinary: ${response.status} ${response.statusText}`,
-      );
-    }
+        console.log("Response Status:", response.status);
+        console.log("Response Headers:", response.headers);
 
-    const results = await response.json();
+        // Check for non-200 status codes
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
 
+        const textResponse = await response.text();
+        console.log("Response Text:", textResponse);
+
+        // Try to parse the JSON response
+        try {
+          const results = JSON.parse(textResponse);
+          console.log("Parsed Results:", results);
+          return results;
+        } catch (parseError) {
+          console.error("Error parsing JSON:", parseError);
+          throw new Error("Failed to parse JSON response");
+        }
+      } catch (error) {
+        console.error("Error fetching endpoint:", error);
+        throw error;
+      }
+    };
+
+    const results = await fetchImages();
+
+    // Process and return results
     const { resources } = results;
     console.log(resources);
+    return resources;
   } catch (error) {
     console.error(`Error fetching ${resourceType} data:`, error);
     toast.error("Fetch failed. Please try again.", {
