@@ -1,10 +1,8 @@
-
 {
-    "images": [
-      "https://res.cloudinary.com/drwwbw0ih/image/upload/v1718746767/banners/90songs.jpg",
-      "https://res.cloudinary.com/drwwbw0ih/image/upload/v1718746767/banners/rock.jpg",
-      "https://res.cloudinary.com/drwwbw0ih/image/upload/v1718748518/banners/jazz2.jpg",
-      "https://res.cloudinary.com/drwwbw0ih/image/upload/v1718746767/banners/podcast.webp"
-      
-    ]
-  }
+  "images": [
+    "https://res.cloudinary.com/drwwbw0ih/image/upload/v1718746767/banners/90songs.jpg",
+    "https://res.cloudinary.com/drwwbw0ih/image/upload/v1718746767/banners/rock.jpg",
+    "https://res.cloudinary.com/drwwbw0ih/image/upload/v1718748518/banners/jazz2.jpg",
+    "https://res.cloudinary.com/drwwbw0ih/image/upload/v1718746767/banners/podcast.webp"
+  ]
+}
