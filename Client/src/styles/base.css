@@ -108,3 +108,32 @@ body {
 body {
   background-color: #09090b;
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #1a202c #2d3748; /* Track color and thumb color */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #2d3748; /* Track color */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #1a202c; /* Thumb color */
+  border-radius: 4px;
+  border: 2px solid #2d3748; /* Padding around thumb */
+}

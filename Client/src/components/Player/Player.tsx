@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, JSX, useCallback } from "react";
 import { Controls, ProgressBar, Tracks } from "./index";
 import { useWavesurfer } from "@wavesurfer/react";
 import usePlayerStore from "../../store/playerStore";
+import { Volume2 } from "lucide-react";
 
 function Player(): JSX.Element | null {
   const { tracks, currentIndex, setIndex } = usePlayerStore();
@@ -141,8 +142,9 @@ function Player(): JSX.Element | null {
         >
           <div ref={wsContainer} className="w-full cursor-pointer max-md:hidden"></div>
         </ProgressBar>
-        <div className="">
+        <div className="flex gap-2">
           <Tracks tracks={tracks} handler={changeSong} />
+          <Volume2 />
         </div>
       </div>
     </div>
