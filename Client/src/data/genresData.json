@@ -2,61 +2,56 @@
   {
     "id": "g001",
     "title": "Todos los Géneros",
-    "href": "/#"
+    "href": "/browse"
   },
   {
     "id": "g002",
-    "title": "Afrosounds",
-    "href": "/#"
+    "title": "Country",
+    "href": "/browse"
   },
   {
     "id": "g003",
-    "title": "Hip-Hop/Rap",
-    "href": "/#"
+    "title": "Punk Rock",
+    "href": "/browse"
   },
   {
     "id": "g004",
-    "title": "Latin",
-    "href": "/#"
+    "title": "Pop",
+    "href": "/browse"
   },
   {
     "id": "g005",
-    "title": "Jazz/Blues",
-    "href": "/#"
+    "title": "Deep house",
+    "href": "/browse"
   },
   {
     "id": "g006",
-    "title": "Caribben",
-    "href": "/#"
+    "title": "Progressive metal",
+    "href": "/browse"
   },
   {
     "id": "g007",
-    "title": "Pop",
-    "href": "/#"
+    "title": "Rhythmic",
+    "href": "/browse"
   },
   {
     "id": "g008",
-    "title": "Gospel",
-    "href": "/#"
+    "title": "Alternative rock",
+    "href": "/browse"
   },
   {
     "id": "g009",
-    "title": "Electronic",
-    "href": "/#"
+    "title": "Mundo",
+    "href": "/browse"
   },
   {
     "id": "g010",
-    "title": "Rock",
-    "href": "/#"
+    "title": "Introspective",
+    "href": "/browse"
   },
   {
     "id": "g011",
-    "title": "Country",
-    "href": "/#"
-  },
-  {
-    "id": "g012",
-    "title": "Instrumental",
-    "href": "/#"
+    "title": "Contemporary",
+    "href": "/browse"
   }
 ]

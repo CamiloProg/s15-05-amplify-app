@@ -2,10 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { BadgeProps } from "./Badge.types";
 
-const Badge: React.FC<BadgeProps> = ({ title, href, active = false }) => {
+const Badge: React.FC<BadgeProps> = ({ title, href, active = false, onClick }) => {
   return (
     <Link
       to={href}
+      onClick={onClick}
       className={`bg-[#09090b] border-solid border rounded-md 
         ${active ? "border-white bg-white text-black" : "border-[#C2C2C2] text-white"}
         hover:border-white hover:bg-white hover:text-black`}

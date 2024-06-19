@@ -18,7 +18,7 @@ srcRootContent.forEach((directory) => {
 
 export default defineConfig({
   plugins: [react()],
-  
+
   css: {
     postcss: {
       plugins: [tailwindcss()],
@@ -26,12 +26,12 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/api': {
-        target: 'https://api.cloudinary.com',
+      "/api": {
+        target: "https://api.cloudinary.com",
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
-      }
-    }
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
   },
   resolve: {
     alias: {

@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider as ReactRouterProvider } from "reac
 import { routes } from "config";
 import { Feed, Layout } from "components";
 import Album from "components/Album";
+import Browse from "components/Browse";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         path: "album/:id",
         element: <Album />,
+      },
+      {
+        path: "browse",
+        element: <Browse />,
       },
     ],
   },

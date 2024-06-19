@@ -4,6 +4,9 @@ import { Buffer } from "buffer";
 import CardSongs from "../CardSongs";
 import { ImageData } from "../CardSongs/CardSongs.types";
 
+const cloudinaryApiKey = "876211943356417";
+const cloudinaryApiSecret = "nimSIMZaaWO5BfhyuuXASaxrwL0";
+
 const Songs: React.FC = () => {
   const [imageData, setImageData] = useState<ImageData[]>([]);
 
@@ -13,7 +16,7 @@ const Songs: React.FC = () => {
         // Fetch the initial list of images
         const results = await fetch(`/api/v1_1/drwwbw0ih/resources/image/tags/single`, {
           headers: {
-            Authorization: `Basic ${Buffer.from(import.meta.env.VITE_CLOUDINARY_API_KEY + ":" + import.meta.env.VITE_CLOUDINARY_API_SECRET).toString("base64")}`,
+            Authorization: `Basic ${Buffer.from(cloudinaryApiKey + ":" + cloudinaryApiSecret).toString("base64")}`,
           },
         }).then((r) => r.json());
 
@@ -24,7 +27,7 @@ const Songs: React.FC = () => {
               `/api/v1_1/drwwbw0ih/resources/${resource.asset_id}`,
               {
                 headers: {
-                  Authorization: `Basic ${Buffer.from(import.meta.env.VITE_CLOUDINARY_API_KEY + ":" + import.meta.env.VITE_CLOUDINARY_API_SECRET).toString("base64")}`,
+                  Authorization: `Basic ${Buffer.from(cloudinaryApiKey + ":" + cloudinaryApiSecret).toString("base64")}`,
                 },
               },
             ).then((r) => r.json());

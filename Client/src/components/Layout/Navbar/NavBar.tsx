@@ -60,7 +60,7 @@ const NavBar: React.FC = () => {
           <SearchBar />
         </div>
         <div className="flex items-center gap-14 pr-3">
-          <Link to="/" className="hidden lg:block">
+          <Link to="/browse" className="hidden lg:block">
             Descubrir
           </Link>
           <Link to="/" className="hidden lg:block">

@@ -25,8 +25,8 @@ const Carousel: React.FC = () => {
       setTimeout(() => {
         setCurrentImageIndex((prevIndex) => (prevIndex + 1) % tracksData.images.length);
         setIsFadingOut(false);
-      }, 500); 
-    }, 8000); 
+      }, 500);
+    }, 8000);
 
     return () => clearInterval(interval);
   }, []);
@@ -40,9 +40,13 @@ const Carousel: React.FC = () => {
             src={image}
             alt={`Carousel slide ${index}`}
             className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500 ${
-              index === currentImageIndex ? (isFadingOut ? 'opacity-0' : 'opacity-100') : 'opacity-0'
+              index === currentImageIndex
+                ? isFadingOut
+                  ? "opacity-0"
+                  : "opacity-100"
+                : "opacity-0"
             }`}
-            style={{ transition: 'opacity 0.5s ease-in-out' }}
+            style={{ transition: "opacity 0.5s ease-in-out" }}
           />
         ))}
       </div>

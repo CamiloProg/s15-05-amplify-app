@@ -7,17 +7,17 @@
         {
           "id": "201",
           "title": "Top Canciones",
-          "href": "/#"
+          "href": "/browse"
         },
         {
           "id": "202",
           "title": "Top Albums",
-          "href": "/#"
+          "href": "/browse"
         },
         {
           "id": "203",
           "title": "Top Artistas",
-          "href": "/#"
+          "href": "/browse"
         }
       ]
     }
