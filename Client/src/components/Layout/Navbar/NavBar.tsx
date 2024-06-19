@@ -63,7 +63,7 @@ const NavBar: React.FC = () => {
           <Link to="/browse" className="hidden lg:block">
             Descubrir
           </Link>
-          <Link to="/" className="hidden lg:block">
+          <Link to="/playlists" className="hidden lg:block">
             Playlists
           </Link>
           <UploadMusicModal />
