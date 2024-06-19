@@ -1,17 +1,16 @@
-
 import { create } from "zustand";
 import { ITrack } from "../components/Player/Player.types";
-import tracksData from '../data/amplifyDataBack.json';  // Importar el JSON
+import tracksData from "../data/amplifyDataBack.json"; // Importar el JSON
 
 // Transformar las pistas del JSON a la estructura ITrack
-const transformedTracks = tracksData.tracks.flatMap(track => 
-  track.songs.map(song => ({
+const transformedTracks = tracksData.tracks.flatMap((track) =>
+  track.songs.map((song) => ({
     title: song.title,
     artist: track.author,
     album: track.title,
     cover: song.cover_image,
     url: song.file,
-  }))
+  })),
 );
 
 interface IPlayerStore {

@@ -3,6 +3,7 @@ import Logo from "../../../components/common/Logo/Logo";
 import SearchBar from "../../../components/common/SearchBar/SearchBar";
 import ButtonEdit from "../../../components/common/ButtonEdit/ButtonEdit";
 import { Link } from "react-router-dom";
+import UploadMusicModal from "components/common/UploadMusicModal";
 
 const NavBar: React.FC = () => {
   const [menuAbierto, setMenuAbierto] = useState<boolean>(false);
@@ -65,12 +66,7 @@ const NavBar: React.FC = () => {
           <Link to="/" className="hidden lg:block">
             Playlists
           </Link>
-          <Link
-            to="/"
-            className="bg-white text-black px-3 py-2 rounded-md hidden lg:block whitespace-nowrap"
-          >
-            Subir Música
-          </Link>
+          <UploadMusicModal />
           <div className="relative flex items-center gap-4" ref={menuRef}>
             <button
               onClick={toggleMenu}
