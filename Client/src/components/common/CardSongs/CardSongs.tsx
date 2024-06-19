@@ -10,7 +10,9 @@ export default function CardSongs({ tags, public_id, url }: ImageData) {
         </div>
       </div>
       <div>
-        <p className="text-center text-white font-semibold text-base leading-4">{public_id}</p>
+        <p className="text-center text-white font-semibold text-base leading-4 capitalize">
+          {public_id}
+        </p>
         <p className="text-center text-gray-400 font-medium text-[0.8rem]">Fernando</p>
       </div>
     </div>
