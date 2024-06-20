@@ -68,18 +68,6 @@ Navegación fácil y diseño moderno orientado a mejorar la experiencia del usua
 
 <div align="center">
 
-### 🎨 Diseñador UX/UI
-
-|                                                                                                                                                <img src="https://github.com/ushiwushi.png" width=50>                                                                                                                                                 |
-| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|                                                                                                                                                                  **Diego Gonzalez**                                                                                                                                                                  |
-| <a href="https://github.com/ushiwushi"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/diego-gonzalez-7937aa16/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
-
-<hr/>
-</div>
-
-<div align="center">
-
 ### ⚛️ Frontend Developers
 
 |                                                                                                                                   <img src="https://avatars.githubusercontent.com/u/106632070?v=4" width=50>                                                                                                                                   | <img src="https://github.com/alexqs96.png" width=50>                                                                                                                                                                                                                                                                                        | <img src="https://github.com/dimytrix.png" width=50>                                                                                                                                                                                                                                                                                        | <img src="https://github.com/jerick97.png" width=50>                                                                                                                                                                                                                                                                                         |
